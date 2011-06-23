@@ -1,0 +1,21 @@
+Application Universe {
+    basePackage=com.cygnus
+
+    Module milkyway {
+        Service PlanetService {
+            String sayHello(String planetName);
+            protected findByExample => PlanetRepository.findByExample;
+        }
+
+        Entity Planet {
+            String name key;
+            String message;
+
+            Repository PlanetRepository {
+                findByExample;
+
+            }
+        }
+
+    }
+}
